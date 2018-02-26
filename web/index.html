@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <script type="text/javascript" src="/eel.js"></script>
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+  </script>
+
+</head>
+<body>
+
+<input id="backup" class="btn btn-primary" type="button" value="Input">
+
+<script>
+$( "#backup" ).click(function() {
+  eel.call_backup()
+});
+</script>
+
+</body>
+</html>
