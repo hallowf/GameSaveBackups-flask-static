@@ -2,24 +2,27 @@
 <html>
 <head>
 
+
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-  <script type="text/javascript" src="/eel.js"></script>
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous">
-  </script>
 
 </head>
 <body>
 
-<input id="backup" class="btn btn-primary" type="button" value="Input">
+<div id="list" class="row"></div>
 
-<script>
-$( "#backup" ).click(function() {
-  eel.call_backup()
-});
+
+<script
+src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js">
 </script>
+
+<script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous">
+</script>
+
+<script type="text/javascript" src="/eel.js"></script>
+<script type="text/javascript" src="/js/add_to_html.js"></script>
 
 </body>
 </html>
