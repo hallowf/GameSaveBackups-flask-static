@@ -7,10 +7,10 @@ const gameTemplate = _.template(`
     <img class="card-img-top" src="/img/<%=name%>.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text"><%=path%></p>
       <div class="btn-group-toogle" data-toggle="buttons">
         <label class="btn btn-secondary active">
-          <input type="checkbox" checked autocomplete="off"> Backup
+          <input class ="checkbox" type="checkbox" autocomplete="off"> Backup
         </label>
       </div>
     </div>
@@ -20,8 +20,21 @@ const gameTemplate = _.template(`
 const root = $('#list')
 function renderGames(games) {
   games.forEach(game => {
-    var element = $('<div></div>').addClass("col-sm-6")
+    var element = $('<div></div>').addClass('col-sm-3')
     element.html(gameTemplate(game))
     root.append(element)
+    var button = element.find('.checkbox').click(function() {
+      eel.make_backup(game)
+    })
   })
 }
+
+
+function renderButton() {
+  var zipButton = $('#backup')
+  zipButton.click(function() {
+    eel.make_zip()
+  })
+}
+
+renderButton()

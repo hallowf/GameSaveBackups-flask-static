@@ -12,6 +12,18 @@ def check_game():
         else:
             print ("could not find ", game_exists.name)
 
+
+def make_backup (search):
+    shutil.copytree(search["path"], "R:\\backs\\" + search["name"],)
+
+
+def make_zip ():
+    try:
+        os.remove("R:\\backzips.zip")
+    except:
+        shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
+        shutil.rmtree("R:\\backs")
+
 #def make_backup ():
 
     # remove old unzipped folder

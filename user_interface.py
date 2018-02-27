@@ -8,7 +8,16 @@ def get_games():
     return list(savebackup.check_game())
 
 @eel.expose
-def call_backup():
-    savebackup.make_backup()
+def make_backup(search):
+    try:
+        savebackup.make_backup(search)
+    except:
+        print ("game already exists")
+
+@eel.expose
+def make_zip():
+    savebackup.make_zip()
+
+
 eel.init("web")
 eel.start("index.html")
