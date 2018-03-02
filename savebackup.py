@@ -4,6 +4,9 @@ import shutil
 from database import save_database
 
 
+path = os.environ['ALLUSERSPROFILE']
+
+
 
 def check_game():
     for game_exists in save_database:
@@ -21,8 +24,9 @@ def make_zip ():
     try:
         os.remove("R:\\backzips.zip")
     except:
-        shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
-        shutil.rmtree("R:\\backs")
+        shutil.make_archive("zippedBackups", "zip", path, "R:\\backs\\")
+        #shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
+        #shutil.rmtree("R:\\backs")
 
 #def make_backup ():
 
