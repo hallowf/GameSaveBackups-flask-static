@@ -17,14 +17,14 @@ def check_game():
 
 
 def make_backup (search):
-    shutil.copytree(search["path"], "R:\\backs\\" + search["name"],)
+    shutil.copytree(search["path"], path + "\\temp\\" + search["name"],)
 
 
 def make_zip ():
     try:
         os.remove("R:\\backzips.zip")
     except:
-        shutil.make_archive("zippedBackups", "zip", path, "R:\\backs\\")
+        shutil.make_archive("zippedBackups", "zip", path, path + "\\temp\\")
         #shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
         #shutil.rmtree("R:\\backs")
 
