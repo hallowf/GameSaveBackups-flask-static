@@ -1,18 +1,18 @@
 [
     [
         "Dying Light",
-        "C:\\Users\\Hallow\\Documents\\DyingLight"
+        "~\\Documents\\DyingLight"
     ],
     [
         "Grand Theft Auto V",
-        "C:\\Users\\Hallow\\Documents\\Rockstar Games\\GTA V"
+        "~\\Documents\\Rockstar Games\\GTA V"
     ],
     [
-        "Minecraft", 
-        "C:\\Users\\Hallow\\Documents\\Minecraft"
+        "Minecraft",
+        "\\Minecraft"
     ],
     [
         "Fallout 4",
-        "C:\\Users\\Hallow\\Documents\\My Games\\Fallout4"
+        "~\\Documents\\My Games\\Fallout4"
     ]
 ]

@@ -4,8 +4,9 @@ import eel
 
 @eel.expose
 def get_games():
-    print(list(savebackup.check_game()))
-    return list(savebackup.check_game())
+    games_list = list(savebackup.check_game())
+    print(games_list)
+    return list(games_list)
 
 @eel.expose
 def make_backup(search):
