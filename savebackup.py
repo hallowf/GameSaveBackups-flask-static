@@ -1,12 +1,15 @@
+import tempfile
 import os
 import zipfile
 import shutil
 from database import save_database
 
+tmp_dir = tempfile.mkdtemp()
+tmp_filename = ()
 
-path = os.environ['ALLUSERSPROFILE']
+tmp_umask = os.umask(0077)
 
-
+tmp_path = os.path.join(tmp_dir, tmp_filename)
 
 def check_game():
     for game_exists in save_database:
@@ -17,14 +20,17 @@ def check_game():
 
 
 def make_backup (search):
-    shutil.copytree(search["path"], path + "\\temp\\" + search["name"],)
+    try:
+        shutil.copytree(search["path"], tmp_path + search["name"],)
+    except Exception as e:
+        print "can't make temp files", e
 
 
 def make_zip ():
     try:
-        os.remove("R:\\backzips.zip")
-    except:
-        shutil.make_archive("zippedBackups", "zip", path, path + "\\temp\\")
+        shutil.make_archive("zippedBackups", "zip", root_dir=".", base_dir=tmp_path)
+    except Exception as f:
+        print "can't make archive", f
         #shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
         #shutil.rmtree("R:\\backs")
 

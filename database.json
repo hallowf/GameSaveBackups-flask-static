@@ -8,11 +8,23 @@
         "~\\Documents\\Rockstar Games\\GTA V"
     ],
     [
-        "Minecraft",
-        "\\Minecraft"
+        "Shadow of Mordor",
+        "C:\\Program Files (x86)\\Steam\\userdata\\20005476\\241930\\remote\\gamedata.sav"
     ],
     [
-        "Fallout 4",
-        "~\\Documents\\My Games\\Fallout4"
+        "The Witcher",
+        "~\\Documents\\The Witcher\\saves"
+    ],
+    [
+        "Space Engineers",
+        "~\\AppData\\Roaming\\SpaceEngineers\\Saves"
+    ],
+    [
+        "Shadow Warrior DX11",
+        "~\\Documents\\Shadow Warrior DX11"
+    ],
+    [
+        "Sorcerer King Rivals",
+        "~\\Documents\\My Games\\SorcererKingRivals"
     ]
 ]
