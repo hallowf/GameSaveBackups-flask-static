@@ -5,7 +5,7 @@ import shutil
 from database import save_database
 
 tmp_dir = tempfile.mkdtemp()
-tmp_filename = ()
+tmp_filename = ""
 
 tmp_umask = os.umask(0077)
 
@@ -22,17 +22,20 @@ def check_game():
 def make_backup (search):
     try:
         shutil.copytree(search["path"], tmp_path + search["name"],)
-    except Exception as e:
-        print "can't make temp files", e
+    except:
+        print ("can't make temp files")
 
 
 def make_zip ():
     try:
         shutil.make_archive("zippedBackups", "zip", root_dir=".", base_dir=tmp_path)
-    except Exception as f:
-        print "can't make archive", f
+    except:
+        print ("can't make archive")
         #shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
         #shutil.rmtree("R:\\backs")
+
+
+
 
 #def make_backup ():
 

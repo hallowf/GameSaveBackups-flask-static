@@ -8,7 +8,7 @@ added_files = [
 	  ]
 
 
-a = Analysis(['user_interface.py', 'savebackup.py', 'insert_in_html.py', 'database.py', 'classes.py'],
+a = Analysis(['user_interface.py', 'savebackup.py', 'database.py', 'classes.py'],
              pathex=['C:\\Users\\Hallow\\Documents\\Alex\\Github\\GameSaveBackups'],
              binaries=[],
              datas=[('C:\\Python27\\lib\\site-packages\\eel\\eel.js', 'eel'), ('web', 'web'), ('database.json', '.')],
