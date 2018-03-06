@@ -19,20 +19,26 @@ def check_game():
             print ("could not find ", game_exists.name)
 
 
-def make_backup (search):
+def make_backup (game):
     try:
-        shutil.copytree(search["path"], tmp_path + search["name"],)
+        shutil.copytree(game["path"], tmp_path + game["name"],)
+        print("Making temp files")
     except:
         print ("can't make temp files")
 
 
 def make_zip ():
-    try:
+    if os.path.isfile("zippedBackups.zip"):
+        os.remove("zippedBackups.zip")
+        print ("Removing old backups")
+    else:
+        print ("No need to remove old backups")
+    if os.path.isdir(tmp_path):
+        print("Making zip archive")
         shutil.make_archive("zippedBackups", "zip", root_dir=".", base_dir=tmp_path)
-    except:
+        print("Done")
+    else:
         print ("can't make archive")
-        #shutil.make_archive("R:\\backzips", "zip", "R:\\backs\\")
-        #shutil.rmtree("R:\\backs")
 
 
 

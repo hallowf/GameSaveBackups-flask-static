@@ -9,9 +9,9 @@ def get_games():
     return games_list
 
 @eel.expose
-def make_backup(search):
+def make_backup(game):
     try:
-        savebackup.make_backup(search)
+        savebackup.make_backup(game)
     except:
         print ("game already exists")
 
