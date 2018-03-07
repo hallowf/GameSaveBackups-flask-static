@@ -8,11 +8,9 @@ const gameTemplate = _.template(`
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
       <p class="card-text"><%=path%></p>
-      <div class="btn-group-toogle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input class ="checkbox" type="checkbox" autocomplete="off"> Backup
-        </label>
-      </div>
+      <label class="btn btn-secondary active">
+        <input class ="checkbox" type="checkbox" autocomplete="off"> Backup
+      </label>
     </div>
   </div>
 `)
@@ -33,7 +31,10 @@ function renderGames(games) {
 function renderButton() {
   var zipButton = $('#backup')
   zipButton.click(function() {
-    eel.make_zip()
+    $('#loading').modal()
+    eel.make_zip()().then(function(){
+      $('#loading').modal('hide')
+    })
   })
 }
 
