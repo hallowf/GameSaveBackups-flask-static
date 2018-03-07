@@ -20,17 +20,25 @@ def check_game():
 
 
 def make_backup (game):
+    if os.path.isdir(os.path.join(tmp_path + game["name"])):
+        print ("Removing old tmp files")
+        os.rmdir(tmp_path + game["name"])
+        print ("Removed old tmp files")
+    else:
+        print ("No need to remove old temp files")
     try:
+        print ("Making new tmp files")
         shutil.copytree(game["path"], tmp_path + game["name"],)
-        print("Making temp files")
+        print("Made tmp files")
     except:
-        print ("can't make temp files")
+        print ("can't make tmp files")
 
 
 def make_zip ():
     if os.path.isfile("zippedBackups.zip"):
+        print ("Removing old zip file")
         os.remove("zippedBackups.zip")
-        print ("Removing old backups")
+        print ("Done")
     else:
         print ("No need to remove old backups")
     if os.path.isdir(tmp_path):

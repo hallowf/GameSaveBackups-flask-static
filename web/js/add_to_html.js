@@ -4,7 +4,7 @@ eel.get_games()().then(games => {
 
 const gameTemplate = _.template(`
   <div class="card" style="width: 80%; margin:1em auto">
-    <img class="card-img-top" src="/img/<%=name%>.jpg" alt="Card image cap">
+    <img class="card-img-top" src="/img/gameimgs/<%=name%>.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
       <p class="card-text"><%=path%></p>
