@@ -1,4 +1,4 @@
-eel.get_games()().then(games => {
+eel.search_all_disks()().then(games => {
   renderGames(games)
 });
 

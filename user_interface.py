@@ -1,6 +1,13 @@
 import savebackup
 from database import save_database
 import eel
+from search_disks import find_game
+
+@eel.expose
+def search_all_disks():
+    all_games = list(find_game())
+    print all_games
+    return all_games
 
 @eel.expose
 def get_games():
