@@ -1,11 +1,10 @@
 # GameSaveBackups
-Creates individual backups for game saves
+Creates backups for game saves
 
 
 # How to build
 
-You will need pyinstaller and both python 2 and python 3 should work.
-Since this uses eel you will also need to install eel.
+You will need pyinstaller and eel, both python 2 and python 3 should work.
 To build python -m eel user_interface.spec web
 
 
