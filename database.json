@@ -1,46 +1,57 @@
 [
     [
         "Dying Light",
-        "~\\Documents\\DyingLight"
+        "~\\Documents\\DyingLight",
+        "NFL"
     ],
     [
         "Grand Theft Auto V",
-        "~\\Documents\\Rockstar Games\\GTA V"
+        "~\\Documents\\Rockstar Games\\GTA V",
+        "NFL"
     ],
     [
         "Shadow of Mordor",
-        "C:\\Program Files (x86)\\Steam\\userdata\\20005476\\241930\\remote\\gamedata.sav"
+        "C:\\Program Files (x86)\\Steam\\userdata\\20005476\\241930\\remote\\gamedata.sav",
+        "NFL"
     ],
     [
         "The Witcher",
-        "~\\Documents\\The Witcher\\saves"
+        "~\\Documents\\The Witcher\\saves",
+        "NFL"
     ],
     [
         "Space Engineers",
-        "~\\AppData\\Roaming\\SpaceEngineers\\Saves"
+        "~\\AppData\\Roaming\\SpaceEngineers\\Saves",
+        "NFL"
     ],
     [
         "Shadow Warrior DX11",
-        "~\\Documents\\Shadow Warrior DX11"
+        "~\\Documents\\Shadow Warrior DX11",
+        "NFL"
     ],
     [
         "Sorcerer King Rivals",
-        "~\\Documents\\My Games\\SorcererKingRivals"
+        "~\\Documents\\My Games\\SorcererKingRivals",
+        "NFL"
     ],
     [
         "My summer car",
-        "~\\AppData\\LocalLow\\Amistech\\My Summer Car "
+        "~\\AppData\\LocalLow\\Amistech\\My Summer Car ",
+        "NFL"
     ],
     [
         "Just cause 2",
-        "~\\Documents\\Square Enix\\Just Cause 2\\Saves\\JC2Settings"
+        "~\\Documents\\Square Enix\\Just Cause 2\\Saves\\JC2Settings",
+        "NFL"
     ],
     [
         "Just cause 3",
-        "~\\Documents\\Square Enix\\Just Cause 3\\Saves"
+        "~\\Documents\\Square Enix\\Just Cause 3\\Saves",
+        "NFL"
     ],
     [
         "Portal 2",
-        "C:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2\\SAVE"
+        "C:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2\\SAVE",
+        "NFL"
     ]
 ]
