@@ -8,7 +8,7 @@ import search_disks
 tmp_dir = tempfile.mkdtemp()
 tmp_filename = ""
 
-tmp_umask = os.umask(0077)
+#tmp_umask = os.umask(0077)
 
 tmp_path = os.path.join(tmp_dir, tmp_filename)
 
