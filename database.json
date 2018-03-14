@@ -2,7 +2,7 @@
     [
         "Dying Light",
         "~\\Documents\\DyingLight",
-        "NFL"
+        "./Dying Light/"
     ],
     [
         "Grand Theft Auto V",
@@ -20,7 +20,7 @@
         "NFL"
     ],
     [
-        "The Witcher 2: Assassins of Kings",
+        "The Witcher 2 Assassins of Kings",
         "~\\Documents\\Witcher 2\\gamesaves",
         "~/.local/share/cdprojektred/witcher2/GameDocuments/Witcher 2/gamesaves/"
     ],
@@ -35,12 +35,12 @@
         "NFL"
     ],
     [
-        "Kane & Lynch: Dead Men",
+        "Kane & Lynch Dead Men",
         "~\\AppData\\Local\\kaneandlynch1",
         "NFL"
     ],
     [
-        "Kane & Lynch 2: Dog Days",
+        "Kane & Lynch 2 Dog Days",
         "~\\Documents\\Square Enix\\Kane & Lynch 2 - Dog Days",
         "NFL"
     ],
@@ -70,17 +70,17 @@
         "NFL"
     ],
     [
-        "Tomb Raider: Anniversary",
+        "Tomb Raider Anniversary",
         "~\\Documents\\Eidos\\Tomb Raider - Anniversary\\",
         "NFL"
     ],
     [
-        "Tomb Raider: Legend",
+        "Tomb Raider Legend",
         "~\\Documents\\Eidos\\Tomb Raider - Legend\\",
         "NFL"
     ],
     [
-        "Tomb Raider: Underworld",
+        "Tomb Raider Underworld",
         "~\\Documents\\Eidos\\Tomb Raider - Underworld\\",
         "NFL"
     ],
@@ -90,13 +90,18 @@
         "NFL"
     ],
     [
-        "State of Decay: Year-one",
+        "State of Decay Year-one",
         "C:\\Program Files (x86)\\Steam\\steamapps\\common\\State of Decay YOSE\\",
         "NFL"
     ],
     [
         "Saints Row 2",
         "~\\AppData\\LocalLow\\THQ\\Saints Row 2",
+        "NFL"
+    ],
+    [
+        "Cities Skylines",
+        "~\\AppData\\Local\\Colossal Order\\Cities_Skylines\\Saves",
         "NFL"
     ],
     [
