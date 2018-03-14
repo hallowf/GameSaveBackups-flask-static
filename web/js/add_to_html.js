@@ -10,6 +10,7 @@ const gameTemplate = _.template(`
       <p class="card-text"><%=path%></p>
       <label class="btn btn-secondary active">
         <input class ="checkbox" type="checkbox" autocomplete="off"> Backup
+        <input class ="checkbox" type="checkbox" autocomplete="off"> Steam Cloud
       </label>
     </div>
   </div>
