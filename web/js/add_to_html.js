@@ -3,7 +3,7 @@ eel.search_all_disks()().then(games => {
 });
 
 const gameTemplate = _.template(`
-  <div class="card" style="width: 80%; margin:1em auto">
+  <div class="card bg-secondary" style="width:85%; background-color:#eae8ea; margin:1em auto">
     <img class="card-img-top" src="/img/gameimgs/<%=name%>.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
@@ -41,8 +41,13 @@ function renderButton() {
   })
 }
 
-function getSteamID() {
-
+function loginSteam() {
+  checkBTN = $('#checkid').click(function() {
+    playerId = $('#userid').val()
+    console.log(playerId)
+  })
 }
+
+loginSteam()
 
 renderButton()
