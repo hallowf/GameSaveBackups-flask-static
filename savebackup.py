@@ -3,7 +3,6 @@ import os
 import zipfile
 import shutil
 from database import save_database
-import search_disks
 
 tmp_dir = tempfile.mkdtemp()
 tmp_filename = ""
@@ -11,8 +10,6 @@ tmp_filename = ""
 #tmp_umask = os.umask(0077)
 
 tmp_path = os.path.join(tmp_dir, tmp_filename)
-
-search_disks.find_game()
 
 def check_game():
     for game_exists in save_database:

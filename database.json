@@ -11,7 +11,7 @@
     ],
     [
         "Shadow of Mordor",
-        "C:\\Program Files (x86)\\Steam\\userdata\\20005476\\241930\\remote\\gamedata.sav",
+        "C:\\Program Files (x86)\\Steam\\userdata\\20005476\\241930\\remote\\",
         "NFL"
     ],
     [
@@ -20,8 +20,28 @@
         "NFL"
     ],
     [
+        "The Witcher 2: Assassins of Kings",
+        "~\\Documents\\Witcher 2\\gamesaves",
+        "~/.local/share/cdprojektred/witcher2/GameDocuments/Witcher 2/gamesaves/"
+    ],
+    [
         "Space Engineers",
         "~\\AppData\\Roaming\\SpaceEngineers\\Saves",
+        "NFL"
+    ],
+    [
+        "Medieval Engineers",
+        "~\\AppData\\Roaming\\MedievalEngineers\\Saves",
+        "NFL"
+    ],
+    [
+        "Kane & Lynch: Dead Men",
+        "~\\AppData\\Local\\kaneandlynch1",
+        "NFL"
+    ],
+    [
+        "Kane & Lynch 2: Dog Days",
+        "~\\Documents\\Square Enix\\Kane & Lynch 2 - Dog Days",
         "NFL"
     ],
     [
@@ -47,6 +67,36 @@
     [
         "Just cause 3",
         "~\\Documents\\Square Enix\\Just Cause 3\\Saves",
+        "NFL"
+    ],
+    [
+        "Tomb Raider: Anniversary",
+        "~\\Documents\\Eidos\\Tomb Raider - Anniversary\\",
+        "NFL"
+    ],
+    [
+        "Tomb Raider: Legend",
+        "~\\Documents\\Eidos\\Tomb Raider - Legend\\",
+        "NFL"
+    ],
+    [
+        "Tomb Raider: Underworld",
+        "~\\Documents\\Eidos\\Tomb Raider - Underworld\\",
+        "NFL"
+    ],
+    [
+        "Fallout 4",
+        "~\\Documents\\My Games\\Fallout4\\Saves",
+        "NFL"
+    ],
+    [
+        "State of Decay: Year-one",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\State of Decay YOSE\\",
+        "NFL"
+    ],
+    [
+        "Saints Row 2",
+        "~\\AppData\\LocalLow\\THQ\\Saints Row 2",
         "NFL"
     ],
     [
