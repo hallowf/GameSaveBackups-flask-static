@@ -1,6 +1,6 @@
-eel.search_all_disks()().then(games => {
+/*eel.search_all_disks()().then(games => {
   renderGames(games)
-});
+});*/
 
 const gameTemplate = _.template(`
   <div class="card bg-secondary" style="width:85%; background-color:#eae8ea; margin:1em auto">
