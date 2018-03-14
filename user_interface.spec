@@ -2,13 +2,9 @@
 
 block_cipher = None
 
-added_files = [
-	  ( 'database.json', '.' ),
-	
-	  ]
 
 
-a = Analysis(['user_interface.py', 'savebackup.py', 'database.py', 'classes.py'],
+a = Analysis(['user_interface.py', 'savebackup.py', 'database.py', 'classes.py', 'search_disks.py'],
              pathex=['C:\\Users\\Hallow\\Documents\\Alex\\Github\\GameSaveBackups'],
              binaries=[],
              datas=[('C:\\Python27\\lib\\site-packages\\eel\\eel.js', 'eel'), ('web', 'web'), ('database.json', '.')],
