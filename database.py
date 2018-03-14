@@ -6,7 +6,7 @@ import platform
 save_database = json.load(open("database.json"))
 
 def load_game(db_item):
-    current_os = platform.system
+    current_os = platform.system()
     path = ""
     [name, win_path, lin_path] = db_item
     if current_os == "Windows":
