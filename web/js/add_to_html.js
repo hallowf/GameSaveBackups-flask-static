@@ -9,8 +9,10 @@ const gameTemplate = _.template(`
       <h5 class="card-title"><%=name%></h5>
       <p class="card-text"><%=path%></p>
       <label class="btn btn-secondary active">
-        <input class ="checkbox" type="checkbox" autocomplete="off"> Backup
-        <input class ="checkbox" type="checkbox" autocomplete="off"> Steam Cloud
+        <input class ="checkbox" style="margin:1em auto" type="checkbox" autocomplete="off"> Backup
+      </label>
+      <label class="btn btn-secondary active">
+        <input class ="steamCloud" style="margin:1em auto" type="checkbox" autocomplete="off"> Steam Cloud
       </label>
     </div>
   </div>
@@ -37,6 +39,10 @@ function renderButton() {
       $('#loading').modal('hide')
     })
   })
+}
+
+function getSteamID() {
+
 }
 
 renderButton()
