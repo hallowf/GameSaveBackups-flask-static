@@ -11,8 +11,10 @@ def load_game(db_item):
     [name, win_path, lin_path] = db_item
     if current_os == "Windows":
         path = win_path
+        print(path)
     else:
         path = lin_path
+        print(path)
     return Game(name, os.path.expanduser(path))
 
 save_database = map(load_game, save_database)

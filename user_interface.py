@@ -2,9 +2,14 @@ import savebackup
 from database import save_database
 import eel
 import platform
-import search_disks
 
-search_disks.find_game()
+
+if platform.system() == "Windows":
+    import search_disks
+    search_disks.find_game()
+else:
+    print ("Linux detected")
+
 
 @eel.expose
 def search_all_disks():

@@ -2,7 +2,12 @@
     [
         "Dying Light",
         "~\\Documents\\DyingLight",
-        "./Dying Light/"
+        "~/.Dying Light/"
+    ],
+    [
+        "Mount & Blade Warband",
+        "~\\Documents\\mbwarband",
+        "~/.mbwarband/Savegames/Native"
     ],
     [
         "Grand Theft Auto V",
