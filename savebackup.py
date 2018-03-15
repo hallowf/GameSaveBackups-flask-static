@@ -3,6 +3,7 @@ import os
 import zipfile
 import shutil
 from database import save_database
+import read_zip
 
 tmp_dir = tempfile.mkdtemp()
 tmp_filename = ""
@@ -36,7 +37,8 @@ def make_backup (game):
 
 def make_zip ():
     if os.path.isfile("zippedBackups.zip"):
-        print ("Removing old zip file")
+        zip_file = read_zip.read_zip_file()
+        print ("Checking games")
         os.remove("zippedBackups.zip")
         print ("Done")
     else:
@@ -47,6 +49,20 @@ def make_zip ():
         print("Done")
     else:
         print ("can't make archive")
+
+#def make_zip ():
+#    if os.path.isfile("zippedBackups.zip"):
+#        print ("Removing old zip file")
+#        os.remove("zippedBackups.zip")
+#        print ("Done")
+#    else:
+#        print ("No need to remove old backups")
+#    if os.path.isdir(tmp_path):
+#        print("Making zip archive")
+#        shutil.make_archive("zippedBackups", "zip", root_dir=tmp_path)
+#        print("Done")
+#    else:
+#        print ("can't make archive")
 
 
 
