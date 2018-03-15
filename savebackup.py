@@ -43,7 +43,7 @@ def make_zip ():
         print ("No need to remove old backups")
     if os.path.isdir(tmp_path):
         print("Making zip archive")
-        shutil.make_archive("zippedBackups", "zip", root_dir=".", base_dir=tmp_path)
+        shutil.make_archive("zippedBackups", "zip", root_dir=tmp_path)
         print("Done")
     else:
         print ("can't make archive")
