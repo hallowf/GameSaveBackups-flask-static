@@ -1,6 +1,6 @@
-eel.search_all_disks()().then(games => {
+/*eel.search_all_disks()().then(games => {
   renderGames(games)
-});
+});*/
 
 const gameTemplate = _.template(`
   <div class="card bg-secondary" style="width:85%; background-color:#eae8ea; margin:1em auto">
@@ -47,6 +47,17 @@ function loginSteam() {
     console.log(playerId)
   })
 }
+
+function noSteam() {
+  nosteam = $('#nosteam').click(function() {
+    console.log("getting games")
+    eel.search_all_disks()().then(games => {
+      renderGames(games)
+    });
+  })
+}
+
+noSteam()
 
 loginSteam()
 
