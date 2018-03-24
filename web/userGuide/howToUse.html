@@ -8,18 +8,52 @@
 </head>
 <body style= "background-image:url('/img/background.jpg'); -moz-background-size: cover; -o-background-size: cover; background-size: cover; width: 100%; height:auto; background-attachment: fixed">
 
-  <div class="card">
-    <div class="card-header">
-      <h5 class="card-title">Welcome to SaveFilesBackupGenerator</h5>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">This free Windows/Linux program allows you to easily make backups of your save files</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="https://github.com/hallowf/GameSaveBackups" class="btn btn-primary">Check it out on Github</a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a href="../index.html" class="btn btn-info">Home</a>
+  <a href="userGuide.html" class="btn btn-info">User Guide</a>
+</nav>
+
+
+<div class="card" style="width: 90%; margin:1em auto">
+  <div class="card-header bg-light">
+    <h5 class="card-title">Basic functionality</h5>
   </div>
-
-
+    <div class="card-body">
+      <h5 class="card-title">First screen (Home Screen)</h5>
+        <p class="card-text">
+          When you run the program you are presented with a home page that gives you
+          two options, the one that you choose will determine how the program looks for
+          the games in your computer.
+          <ul>
+            <li>Make zipped backups</li>
+              <p class="card-text">
+                The No steam button searches your computer for games that don't
+                 use steam Sync, the Make backups creates a zip file with the backups.
+              </p>
+            <li>Use Steam ID</li>
+              <p class="card-text">
+                This option allows you to convert your SteamID to SteamID3 which is the
+                ID that names the folder for the Steam cloud backups.
+              </p>
+          </ul>
+          If it finds the save files for the games, cards will be displayed with the
+          game name, it's save path, and a button that allows you to select if you want
+          to back it up or not.
+        </p>
+        <h5 class="card-title">Game Cards</h5>
+          <p class="card-text">
+            After you chose the option that best suits your needs, and the game cards have
+            been displayed, you can now proceed to selecting which games you want to add to
+            the backups.
+          </p>
+          <h5 class="card-title">User Guide</h5>
+            <p class="card-text">
+              The User Guide is meant to help the new users understand how the program works and
+              how to use it, but it also has documentation on how to modify or change certain
+              features and how to add more.
+            </p>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js">
 </script>
