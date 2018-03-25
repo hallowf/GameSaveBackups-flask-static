@@ -37,7 +37,7 @@ def make_backup (game):
 
 def make_zip ():
     if os.path.isfile("zippedBackups.zip"):
-        zip_file = read_zip.read_zip_file()
+        #zip_file = read_zip.read_zip_file()
         print ("Checking games")
         os.remove("zippedBackups.zip")
         print ("Done")

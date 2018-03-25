@@ -18,12 +18,12 @@
 
 <div id="loading" data-backdrop='static' class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content  bg-secondary">
       <div class="modal-header">
         <h5 class="modal-title" style="margin:auto" >Creating backups</h5>
       </div>
-      <div class="modal-body">
-        <img src="/img/Loadingring.gif" style="margin:auto; display:block">
+      <div class="modal-body bg-dark">
+        <img src="/img/Loadingring.gif" align="center" style="margin:auto; display:block">
       </div>
       </div>
     </div>
@@ -34,20 +34,20 @@
 
 <div class="row">
 
-  <div class="card col-sm-3" style="width: 45%; margin:1em auto">
+  <div class="card col-sm-3 bg-dark" style="width: 45%; margin:1em auto">
     <img class="card-img-top" src="/img/Save.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Make zipped backups</h5>
+      <h5 class="card-title text-light">Make zipped backups</h5>
       <button id="nosteam" class="btn btn-primary btn-lg" style="margin:1em auto" type="submit">No steam</button>
       <button id="backup" class="btn btn-primary btn-lg" style="margin:1em auto" type="submit">Make backups</button>
     </div>
   </div>
 
-  <div id="SteamLogin" class="card col-sm-4" style="width: 50%; margin:1em auto">
+  <div id="SteamLogin" class="card col-sm-4 bg-dark" style="width: 50%; margin:1em auto">
     <img class="card-img-top" src="/img/Steam.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Login with Steam</h5>
-        <input type="text" id="userid" style="width: 60%; margin:1em auto">   Your profile URL</input>
+    <div class="card-body text-light">
+      <h5 class="card-title text-light">Login with Steam</h5>
+        <input class="text-dark" type="text" id="userid" style="width: 60%; margin:1em auto">   Your profile URL</input>
         <button id="checkid" style="margin:1em auto" class="btn btn-primary btn-lg" type ="submit">Check user ID</button>
     </div>
   </div>
