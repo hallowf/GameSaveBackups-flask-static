@@ -2,6 +2,7 @@ import savebackup
 from database import save_database
 import eel
 import platform
+import search_sync_path
 
 
 if platform.system() == "Windows":
@@ -9,6 +10,11 @@ if platform.system() == "Windows":
     search_disks.find_game()
 else:
     print ("Linux detected")
+
+@eel.expose
+def get_steam_sync():
+    sync_paths = list(search_sync_path.convert_path("71614717"))
+    return sync_paths   
 
 
 @eel.expose

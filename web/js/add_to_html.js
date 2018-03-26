@@ -8,6 +8,7 @@ const gameTemplate = _.template(`
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
       <p class="card-text"><%=path%></p>
+      <p class="card-text"><%=sync_path%></p>
       <label class="btn btn-secondary active">
         <input class ="checkbox" style="margin:1em auto" type="checkbox" autocomplete="off"> Backup
       </label>
@@ -43,8 +44,9 @@ function renderButton() {
 
 function loginSteam() {
   checkBTN = $('#checkid').click(function() {
-    playerId = $('#userid').val()
-    console.log(playerId)
+    eel.get_steam_sync()().then(games => {
+      renderGames(games)
+    });
   })
 }
 
