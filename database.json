@@ -14,13 +14,6 @@
         "Not available"
     ],
     [
-        "Grand Theft Auto V",
-        "~\\Documents\\Rockstar Games\\GTA V",
-        "C:\\Program Files (x86)\\Steam\\userdata\\XXXXX\\lel",
-        "NFL",
-        "~./Steam/userdata/XXXXX/lel"
-    ],
-    [
         "Shadow of Mordor",
         "~\\Documents\\Shadow of Mordor\\saves",
         "C:\\Program Files (x86)\\Steam\\userdata\\XXXXX\\lel",
@@ -31,7 +24,7 @@
         "The Witcher",
         "~\\Documents\\The Witcher\\saves",
         "Not available",
-        "NFL",
+        "Not for linux",
         "Not available"
     ],
     [
@@ -149,7 +142,7 @@
     [
         "Cities Skylines",
         "~\\AppData\\Local\\Colossal Order\\Cities_Skylines\\Saves",
-        "C:\\Program Files (x86)\\Steam\\userdata\\XXXXX\\lel",
+        "C:\\Program Files (x86)\\Steam\\userdata\\XXXXX\\255710\\remote",
         "NFL",
         "~./Steam/userdata/XXXXX/lel"
     ],
