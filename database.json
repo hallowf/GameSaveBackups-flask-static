@@ -142,15 +142,9 @@
     [
         "Cities Skylines",
         "~\\AppData\\Local\\Colossal Order\\Cities_Skylines\\Saves",
-<<<<<<< Updated upstream
         "C:\\Program Files (x86)\\Steam\\userdata\\XXXXX\\255710\\remote",
-        "NFL",
-        "~./Steam/userdata/XXXXX/lel"
-=======
-        "C:\\Program Files (x86)\\Steam\\userdata\\XXXXX\\",
         "/.local/share/Collosal Order/Cities_skylines/Saves",
-        "Not available"
->>>>>>> Stashed changes
+        "~./Steam/userdata/XXXXX/lel"
     ],
     [
         "Portal 2",
