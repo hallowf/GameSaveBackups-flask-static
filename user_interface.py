@@ -3,7 +3,7 @@ from database import save_database
 import eel
 import platform
 import search_sync_path
-
+import steam_id
 
 if platform.system() == "Windows":
     import search_disks
@@ -12,9 +12,15 @@ else:
     print ("Linux detected")
 
 @eel.expose
-def get_steam_sync():
-    sync_paths = list(search_sync_path.convert_path("71614717"))
-    return sync_paths   
+def convert_into_ID3(user_id):
+    steam_id3 = steam_id.convert_id(user_id)
+    return steam_id3
+
+
+@eel.expose
+def get_steam_sync(user_id):
+    sync_paths = list(search_sync_path.convert_path(user_id))
+    return sync_paths
 
 
 @eel.expose

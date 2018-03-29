@@ -44,9 +44,13 @@ function renderButton() {
 
 function loginSteam() {
   checkBTN = $('#checkid').click(function() {
-    eel.get_steam_sync()().then(games => {
-      renderGames(games)
-    });
+    user_id = $('#userid').val()
+    steam_id3 = eel.convert_into_ID3(user_id)().then(steam_id3 => {
+      console.log(steam_id3)
+      eel.get_steam_sync(steam_id3)().then(games => {
+        renderGames(games)
+      })
+    })
   })
 }
 
