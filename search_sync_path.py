@@ -14,7 +14,7 @@ def convert_path(user_id):
             new_sync = game.sync_path.replace("XXXXX", str(user_id))
             drive_letters = win32api.GetLogicalDriveStrings().split("\000")[:-1]
             for drive in drive_letters:
-                new_path = game.sync_path.replace("C:\\", drive)
+                new_path = new_sync.replace("C:\\", drive)
                 if os.path.isdir(new_path):
                     game.sync_path = new_path
                     yield game.to_dict()
