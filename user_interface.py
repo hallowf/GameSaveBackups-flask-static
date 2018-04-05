@@ -36,11 +36,6 @@ def search_all_disks():
         return games_list
 
 
-#@eel.expose
-#def get_games():
-#    games_list = list(savebackup.check_game())
-#    print(games_list)
-#    return games_list
 
 @eel.expose
 def make_backup(game):

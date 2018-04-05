@@ -1,3 +1,6 @@
+
+idStorage = window.localStorage;
+
 /*eel.search_all_disks()().then(games => {
   renderGames(games)
 });*/
@@ -45,11 +48,25 @@ function renderButton() {
 function loginSteam() {
   checkBTN = $('#checkid').click(function() {
     user_id = $('#userid').val()
+    idStorage.setItem('userID', user_id)
     steam_id3 = eel.convert_into_ID3(user_id)().then(steam_id3 => {
       console.log(steam_id3)
+      console.log(cachedID)
       eel.get_steam_sync(steam_id3)().then(games => {
         renderGames(games)
       })
+    })
+  })
+}
+
+
+function cachedSync() {
+  cachedID = idStorage.getItem("userID")
+  cachedBTN = $('cachedid')
+  steam_id3 = eel.convert_into_ID3(cachedID)().then(steam_id3 => {
+    console.log(cachedID)
+    eel.get_steam_sync(steam_id3)().then(games => {
+      renderGames(games)
     })
   })
 }
