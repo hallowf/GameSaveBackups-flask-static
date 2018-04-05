@@ -3,3 +3,5 @@ build
 *.pyc
 *.zip
 __pycache__
+*.txt
+Game
