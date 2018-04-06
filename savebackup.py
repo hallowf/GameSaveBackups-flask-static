@@ -8,8 +8,6 @@ import read_zip
 tmp_dir = tempfile.mkdtemp()
 tmp_filename = ""
 
-#tmp_umask = os.umask(0077)
-
 tmp_path = os.path.join(tmp_dir, tmp_filename)
 
 def check_game():
@@ -37,7 +35,6 @@ def make_backup (game):
 
 def make_zip ():
     if os.path.isfile("zippedBackups.zip"):
-        #zip_file = read_zip.read_zip_file()
         print ("Checking games")
         os.remove("zippedBackups.zip")
         print ("Done")
