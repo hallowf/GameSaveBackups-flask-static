@@ -7,6 +7,7 @@ Creates backups for game saves
 ### Requirements
 
 You will need the following packages:
+
   1. Steam
   2. Pyinstaller
   3. eel
@@ -17,9 +18,10 @@ You will need the following packages:
 
 First go to https://github.com/hallowf/GameSaveBackups and download the repository,
 navigate to the directory and run the following code:
+
 `pyinstaller -m eel user_interface.spec web`
 
-
+And you should have a folder named dist containing the program.
 
 
 
