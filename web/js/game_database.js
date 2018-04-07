@@ -31,4 +31,17 @@ function get_whole_database() {
   })
 }
 
+function gameSliders() {
+  $('#innerslider').hover(
+    function() {
+      $(this).carousel({pause:false})
+      $(this).carousel({interval:1500})
+    },
+    function() {
+      $(this).carousel('pause')
+    })
+}
+
+gameSliders()
+
 get_whole_database()
