@@ -4,12 +4,19 @@ import eel
 import platform
 import search_sync_path
 import steam_id
+from  getAll_from_database import get_all_in_database
 
 if platform.system() == "Windows":
     import search_disks
     search_disks.find_game()
 else:
     print ("Linux detected")
+
+@eel.expose
+def get_database():
+    all_data = list(get_all_in_database())
+    return all_data
+
 
 @eel.expose
 def convert_into_ID3(user_id):
