@@ -51,7 +51,6 @@ function loginSteam() {
     idStorage.setItem('userID', user_id)
     steam_id3 = eel.convert_into_ID3(user_id)().then(steam_id3 => {
       console.log(steam_id3)
-      console.log(cachedID)
       eel.get_steam_sync(steam_id3)().then(games => {
         renderGames(games)
       })
@@ -61,12 +60,13 @@ function loginSteam() {
 
 
 function cachedSync() {
-  cachedID = idStorage.getItem("userID")
-  cachedBTN = $('cachedid')
-  steam_id3 = eel.convert_into_ID3(cachedID)().then(steam_id3 => {
-    console.log(cachedID)
-    eel.get_steam_sync(steam_id3)().then(games => {
-      renderGames(games)
+  $('#cached_id').click(function() {
+    cachedID = idStorage.getItem('userID')
+    cached_steam_id3 = eel.convert_into_ID3(cachedID)().then(cached_steam_id3 => {
+      console.log(cachedID)
+      eel.get_steam_sync(cached_steam_id3)().then(games => {
+        renderGames(games)
+      })
     })
   })
 }
@@ -79,6 +79,8 @@ function noSteam() {
     });
   })
 }
+
+cachedSync()
 
 noSteam()
 
