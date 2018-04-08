@@ -12,6 +12,7 @@ def add_to_zip(zfile, sfile):
 
 
 def append_to_zip(zfile, sfile):
+    #Append the files to zip
 
 
 
@@ -20,9 +21,8 @@ def append_to_zip(zfile, sfile):
 
 def try_reading():
     for game in save_database:
-        game_name = "" 
+        game_name = ""
         game_dict = game.to_dict()
         if "name" in game_dict:
             game_name = game_dict["name"]
             print(game_name)
-        
