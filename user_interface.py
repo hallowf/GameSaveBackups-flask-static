@@ -5,6 +5,7 @@ import platform
 import search_sync_path
 import steam_id
 from  getAll_from_database import get_all_in_database
+from getAll_from_database import generated_games
 
 if platform.system() == "Windows":
     import search_disks
@@ -12,9 +13,13 @@ if platform.system() == "Windows":
 else:
     print ("Linux detected")
 
+
+
 @eel.expose
 def get_database():
-    all_data = list(get_all_in_database())
+    print ("Listing games")
+    all_data = list(generated_games())
+    print (all_data)
     return all_data
 
 
