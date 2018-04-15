@@ -21,4 +21,4 @@ def load_game(db_item):
     print(Game(name, os.path.expanduser(path), os.path.expanduser(sync_path)))
     return Game(name, os.path.expanduser(path), os.path.expanduser(sync_path))
 
-save_database = map(load_game, save_database)
+save_database = list(map(load_game, save_database))

@@ -9,8 +9,9 @@ def get_all_in_database():
 
 
 def generated_games():
+    g = []
     for game in save_database:
-        g = yield game.to_dict()
+        g.append(game.to_dict())
     return g
 
     #print ("Generating games")
