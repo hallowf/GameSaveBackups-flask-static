@@ -61,5 +61,12 @@ def make_zip():
     savebackup.make_zip()
 
 
+appSettings = {
+    'mode': "chrome-app",
+    'host': "localhost",
+    'port': 8080,
+	'chromeFlags': ["--smooth-scrolling"]
+}
+
 eel.init("web")
-eel.start("index.html")
+eel.start("index.html", options=appSettings)
