@@ -1,4 +1,4 @@
 eel
-pywin32
+pypiwin32
 steam
 pyinstaller
