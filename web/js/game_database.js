@@ -43,6 +43,7 @@ function renderSliders(sliders) {
 }
 
 function renderGames(games) {
+  $('#game_database').find('.game_sliders').remove()
   games.forEach(game => {
     var element = $('<div></div>').addClass('col-sm-3')
     element.html(databaseTemplate(game))

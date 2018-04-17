@@ -6,7 +6,7 @@ idStorage = window.localStorage;
 });*/
 
 const gameTemplate = _.template(`
-  <div class="card bg-secondary" style="width:85%; background-color:#eae8ea; margin:1em auto">
+  <div class="card bg-secondary game_cards" style="width:85%; background-color:#eae8ea; margin:1em auto">
     <img class="card-img-top" src="/img/gameimgs/<%=name%>.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
@@ -24,6 +24,7 @@ const gameTemplate = _.template(`
 
 const root = $('#list')
 function renderGames(games) {
+  $('#list').find('.game_cards').remove()
   games.forEach(game => {
     var element = $('<div></div>').addClass('col-sm-3')
     element.html(gameTemplate(game))
