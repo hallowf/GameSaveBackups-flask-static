@@ -3,7 +3,6 @@ build
 *.pyc
 *.zip
 __pycache__
-*.txt
 Game
 Dying Light
 slider_test.html

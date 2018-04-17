@@ -1,0 +1,4 @@
+eel
+pywin32
+steam
+pyinstaller
