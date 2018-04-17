@@ -1,4 +1,3 @@
-eel
-pypiwin32
+eels
 steam
 pyinstaller
