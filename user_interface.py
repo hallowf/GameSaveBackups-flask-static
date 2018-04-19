@@ -4,7 +4,6 @@ import eel
 import platform
 import search_sync_path
 import steam_id
-from  getAll_from_database import get_all_in_database
 from getAll_from_database import generated_games
 
 if platform.system() == "Windows":
