@@ -18,7 +18,7 @@ def check_game():
             print ("could not find ", game_exists.name)
 
 
-def make_backup (game):
+def make_backup(game):
     if os.path.isdir(os.path.join(tmp_path + game["name"])):
         print ("Removing old tmp files")
         os.rmdir(tmp_path + game["name"])
@@ -33,7 +33,7 @@ def make_backup (game):
         print ("can't make tmp files")
 
 
-def make_zip ():
+def make_zip():
     if os.path.isfile("zippedBackups.zip"):
         print ("Checking games")
         #read_zip_file()
@@ -47,3 +47,22 @@ def make_zip ():
         print("Done")
     else:
         print ("can't make archive")
+
+def add_to_zip(game, z_file):
+    if os.path.isfile(z_file):
+        print("Checking games")
+        saves_list = list(set(read_zip_file(z_file)))
+        print(saves_list)
+        if game in saves_list:
+            print("Your save already exists")
+        else:
+            print("Adding game")
+            z = zipfile.ZipFile(z_file, "a")
+            z.write(game)
+            z.close
+
+
+
+
+
+add_to_zip("Game", "zippedBackups.zip")
