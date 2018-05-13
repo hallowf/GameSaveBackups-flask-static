@@ -23,6 +23,7 @@ const gameTemplate = _.template(`
 `)
 
 const root = $('#list')
+
 function renderGames(games) {
   $('#list').find('.game_cards').remove()
   games.forEach(game => {
@@ -43,6 +44,14 @@ function renderButton() {
     eel.make_zip()().then(function(){
       $('#loading').modal('hide')
     })
+  })
+}
+
+function addToZipButton() {
+  var addButton = $('#addtozip')
+  addButton.click(function() {
+    console.log("appending to zip")
+    eel.append_to_zip()
   })
 }
 
@@ -80,6 +89,8 @@ function noSteam() {
     });
   })
 }
+
+addToZipButton()
 
 cachedSync()
 
