@@ -1,14 +1,19 @@
 import zipfile
 
 def has_one_slash(filepath):
-    return filepath.count('/') == 1
+    return filepath.count("/") == 1
 
 def read_zip_file(filepath):
-    slash = '/'
+    slash = "/"
     zip_file = zipfile.ZipFile(filepath)
     path_list = zip_file.namelist()
-    path_list = filter(has_one_slash, path_list)
-    new_list = list(path_list)
-    print(new_list)
+    for x in path_list:
+        x_str = str(x)
+        if x_str.endswith(slash):
+            str_find = x_str.split("/")[0]
+            str_tuple = (str_find,)
+            yield str_find
     zip_file.close()
-    return new_list
+
+
+read_zip_file("zippedBackups.zip")
