@@ -2,13 +2,13 @@ import tempfile
 import os
 import zipfile
 import shutil
+import pathlib
 from database import save_database
 from read_zip import read_zip_file, read_tmp_path
 
-tmp_dir = tempfile.mkdtemp()
-tmp_filename = ""
+tmp_dir = pathlib.Path('.\\tmp_saves').mkdir(parents=True, exist_ok=True)
 
-tmp_path = os.path.join(tmp_dir, tmp_filename)
+tmp_path = "tmp_saves"
 
 def check_game():
     for game_exists in save_database:
@@ -21,13 +21,13 @@ def check_game():
 def make_backup(game):
     if os.path.isdir(os.path.join(tmp_path + game["name"])):
         print ("Removing old tmp files")
-        os.rmdir(tmp_path + game["name"])
+        shutil.rmtree(tmp_path + game["name"])
         print ("Removed old tmp files")
     else:
         print ("No need to remove old temp files")
     try:
         print ("Making new tmp files at: ", tmp_path)
-        shutil.copytree(game["path"], tmp_path + game["name"],)
+        shutil.copytree(game["path"], tmp_path + "\\" + game["name"],)
         print("Made tmp files")
     except:
         print ("can't make tmp files")
@@ -44,7 +44,7 @@ def make_zip():
         print("Making zip archive")
         shutil.make_archive("zippedBackups", "zip", root_dir=tmp_path)
         print("Done, removing temp files")
-        # os.remove(tmp_path)
+        shutil.rmtree(tmp_path)
     else:
         print ("can't make archive")
 
