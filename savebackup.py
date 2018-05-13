@@ -3,7 +3,7 @@ import os
 import zipfile
 import shutil
 import pathlib
-from database import save_database
+from Database import database
 from read_zip import read_zip_file, read_tmp_path
 
 tmp_dir = pathlib.Path('.\\tmp_saves').mkdir(parents=True, exist_ok=True)
@@ -11,7 +11,7 @@ tmp_dir = pathlib.Path('.\\tmp_saves').mkdir(parents=True, exist_ok=True)
 tmp_path = "tmp_saves"
 
 def check_game():
-    for game_exists in save_database:
+    for game_exists in database.save_database:
         if os.path.isdir(game_exists.path):
             yield game_exists.to_dict()
         else:
@@ -47,6 +47,7 @@ def make_zip():
         shutil.rmtree(tmp_path)
     else:
         print ("can't make archive")
+
 
 def add_to_zip():
     if os.path.isfile("zippedBackups.zip"):
