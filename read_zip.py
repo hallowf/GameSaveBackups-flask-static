@@ -1,4 +1,4 @@
-import zipfile
+import zipfile, os
 
 def has_one_slash(filepath):
     return filepath.count("/") == 1
@@ -16,4 +16,6 @@ def read_zip_file(filepath):
     zip_file.close()
 
 
-read_zip_file("zippedBackups.zip")
+def read_tmp_path(folderpath):
+    sub_folders = os.listdir(folderpath)
+    return sub_folders
