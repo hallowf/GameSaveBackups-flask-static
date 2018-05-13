@@ -1,9 +1,9 @@
 import os
 import win32api
-from database import save_database
+from Database import database
 
 def find_game ():
-    for game in save_database:
+    for game in database.save_database:
         drive_letters = win32api.GetLogicalDriveStrings().split("\000")[:-1]
         for drive in drive_letters:
             new_path = game.path.replace("C:\\", drive)
