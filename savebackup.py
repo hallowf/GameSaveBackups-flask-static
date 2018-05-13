@@ -3,7 +3,7 @@ import os
 import zipfile
 import shutil
 from database import save_database
-import read_zip
+from read_zip import read_zip_file
 
 tmp_dir = tempfile.mkdtemp()
 tmp_filename = ""
@@ -36,6 +36,7 @@ def make_backup (game):
 def make_zip ():
     if os.path.isfile("zippedBackups.zip"):
         print ("Checking games")
+        #read_zip_file()
         os.remove("zippedBackups.zip")
         print ("Done")
     else:
