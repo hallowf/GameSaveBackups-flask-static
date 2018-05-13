@@ -1,9 +1,9 @@
 import os
 import json
-from classes import Game
+from . import classes
 import platform
 
-save_database = json.load(open("database.json"))
+save_database = json.load(open("Database\\database.json"))
 
 def load_game(db_item):
     current_os = platform.system()
@@ -18,7 +18,7 @@ def load_game(db_item):
         sync_path = lin_sync
         path = lin_path
         print(path, sync_path)
-    print(Game(name, os.path.expanduser(path), os.path.expanduser(sync_path)))
-    return Game(name, os.path.expanduser(path), os.path.expanduser(sync_path))
+    print(classes.Game(name, os.path.expanduser(path), os.path.expanduser(sync_path)))
+    return classes.Game(name, os.path.expanduser(path), os.path.expanduser(sync_path))
 
 save_database = list(map(load_game, save_database))

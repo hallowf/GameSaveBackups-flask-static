@@ -1,4 +1,3 @@
-
 class Game():
     def __init__(self, game_name, game_path, sync_path):
         self.name = game_name
