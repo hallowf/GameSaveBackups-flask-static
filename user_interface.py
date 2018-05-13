@@ -1,5 +1,4 @@
 import savebackup
-from database import save_database
 import eel
 import platform
 import search_sync_path
