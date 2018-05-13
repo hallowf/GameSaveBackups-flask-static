@@ -3,7 +3,7 @@ import os
 import zipfile
 import shutil
 from database import save_database
-from read_zip import read_zip_file
+from read_zip import read_zip_file, read_tmp_path
 
 tmp_dir = tempfile.mkdtemp()
 tmp_filename = ""
@@ -26,7 +26,7 @@ def make_backup(game):
     else:
         print ("No need to remove old temp files")
     try:
-        print ("Making new tmp files")
+        print ("Making new tmp files at: ", tmp_path)
         shutil.copytree(game["path"], tmp_path + game["name"],)
         print("Made tmp files")
     except:
@@ -36,7 +36,6 @@ def make_backup(game):
 def make_zip():
     if os.path.isfile("zippedBackups.zip"):
         print ("Checking games")
-        #read_zip_file()
         os.remove("zippedBackups.zip")
         print ("Done")
     else:
@@ -44,25 +43,26 @@ def make_zip():
     if os.path.isdir(tmp_path):
         print("Making zip archive")
         shutil.make_archive("zippedBackups", "zip", root_dir=tmp_path)
-        print("Done")
+        print("Done, removing temp files")
+        # os.remove(tmp_path)
     else:
         print ("can't make archive")
 
-def add_to_zip(game, z_file):
-    if os.path.isfile(z_file):
+def add_to_zip():
+    if os.path.isfile("zippedBackups.zip"):
         print("Checking games")
-        saves_list = list(set(read_zip_file(z_file)))
-        print(saves_list)
-        if game in saves_list:
-            print("Your save already exists")
-        else:
-            print("Adding game")
-            z = zipfile.ZipFile(z_file, "a")
-            z.write(game)
-            z.close
-
-
-
-
-
-add_to_zip("Game", "zippedBackups.zip")
+        saves_list = list(set(read_zip_file("zippedBackups.zip")))
+        tmp_path_list = read_tmp_path(tmp_path)
+        for game in tmp_path_list:
+            if game in saves_list:
+                print("You are trying to add an existing game, returning...")
+            else:
+                print("Adding game" + game + " to zip" )
+                z = zipfile.ZipFile("zippedBackups.zip", "a", zipfile.ZIP_DEFLATED)
+                for dirname, subdirs, files in os.walk(tmp_path + game + "\\"):
+                    game_dir = game + "\\"
+                    z.write(tmp_path + game_dir, game_dir)
+                    for filename in files:
+                        z.write(os.path.join(game_dir, dirname + "\\" + filename))
+                z.close()
+                print("done")
