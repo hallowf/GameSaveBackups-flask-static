@@ -59,6 +59,10 @@ def make_backup(game):
 def make_zip():
     savebackup.make_zip()
 
+@eel.expose
+def append_to_zip():
+    savebackup.add_to_zip()
+
 
 appSettings = {
     'mode': "chrome-app",
