@@ -3,7 +3,7 @@
 <head>
 
 
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
 </head>
 <body style="background-image:url('/img/background.jpg'); -moz-background-size: cover; -o-background-size: cover; background-size: cover; width: 100%; height:auto; background-attachment: fixed">
@@ -60,13 +60,11 @@
 </div>
 
 
-<script src="/js/lodash/lodash.js"></script>
+<script src="{{ url_for('static', filename='js/lodash.js') }}"></script>
 
-<script src="/js/Jquery/jquery-3.3.1.js"></script>
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.js') }}"></script>
 
-<script type="text/javascript" src="/eel.js"></script>
-<script type="text/javascript" src="/js/bootstrap/bootstrap.js"></script>
-<script type="text/javascript" src="/js/add_to_html.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
 
 </body>
 </html>
