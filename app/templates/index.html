@@ -6,25 +6,40 @@
 
   <div class="row m-5">
 
-    <div class="col-3 card m-auto" style="width: 18rem;">
-      <img class="card-img-top" src="{{ url_for('images', filename='Save.jpg')}}" alt="Card image cap">
+    <div class="col-3 card m-auto">
+      <img class="card-img-top" src="{{ url_for('static', filename='images/Save.jpg')}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Search for unsynced games</h5>
         <p class="card-text">This will search for saves that are not synced to steam <a href="#">Learn more</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a id="no_sync" href="#" class="btn btn-primary">Search</a>
       </div>
     </div>
 
-    <div class="col-3 card m-auto" style="width: 18rem;">
-      <img class="card-img-top" src="{{ url_for('images', filename='Steam.png')}}" alt="Card image cap">
+    <div class="col-3 card m-auto">
+      <img class="card-img-top m-2" src="{{ url_for('static', filename='images/Steam.png')}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Search for steam synced games</h5>
         <p class="card-text">This will search for saves that are synced to steam <a href="#">Learn more</a></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Your steam id</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <a id="steam_sync" href="#" class="btn btn-primary">Search</a>
       </div>
     </div>
 
   </div>
+
+
+{% endblock %}
+
+
+{% block extraScripts %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/socket.io.slim.dev.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/socketio_events.js')}}"></script>
 
 
 {% endblock %}
