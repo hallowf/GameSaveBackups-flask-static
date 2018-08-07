@@ -1,13 +1,16 @@
+## Python ignores
 dist
 build
 *.pyc
-*.zip
 __pycache__
+.pytest_cache
+*.zip
+env
+
+
+### Custom ignores
 Game
 Dying Light
 The Witcher
-slider_test.html
-sliderTest.html
-.pytest_cache
+*_test*
 tmp_saves
-env
