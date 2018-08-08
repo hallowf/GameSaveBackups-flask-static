@@ -3,7 +3,7 @@
 
 {% block content %}
 
-  <div id="the_Row" class="row mx-auto">
+  <div id="the_row" class="row mx-auto">
 
   </div>
 
@@ -42,6 +42,7 @@
 
 {% block extraScripts %}
 
+<script type="text/javascript" src="{{ url_for('static', filename='js/lodash.js')}}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/index_html.js')}}"></script>
 
 {% endblock %}
