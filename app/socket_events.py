@@ -2,6 +2,7 @@ from flask_socketio import SocketIO, emit
 from app import socketio
 from app.Database.fetch_all_games import generate_games, convert_path
 
+#### # FIXME: This should be in socket_events but if imported that way monkey patch produces a # BUG: https://github.com/gevent/gevent/issues/1016
 ### Socket events
 @socketio.on("event listener", namespace="/websocket")
 def test_message(message):
