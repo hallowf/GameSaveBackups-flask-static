@@ -1,6 +1,7 @@
 import os
 import json
 import platform
+from app.utilities.id_converter import convert_id
 
 ### Check OS
 current_os = platform.system()
@@ -55,16 +56,23 @@ save_database = list(map(load_game, save_database))
 ### Functions to yield games to dict
 
 ## Simple function that simply returns all games
+## Wont work for steam sync
 def generate_games():
     g = []
     for game in save_database:
-        g.append(game.to_dict())
+        if os.path.isdir(game.path):
+            g.append(game.to_dict())
+        else:
+            print("Games does not exist")
     return g
+
 
 
 ### Check the OS and searches for the games in steam library's across all hard drives
 ## TODO: At the moment it can only search all drives in windows, add linux functionality
 def convert_path(user_id):
+    user_id = convert_id(user_id)
+    g = []
     if current_os == "Windows":
         for game in save_database:
             new_sync = game.sync_path.replace("XXXXX", str(user_id))
@@ -72,19 +80,21 @@ def convert_path(user_id):
             for drive in drive_letters:
                 if os.path.isdir(new_sync):
                     game.sync_path = new_sync
-                    yield game.to_dict()
+                    g.append(game.to_dict())
                 else:
                     new_path = new_sync.replace("C:\\", drive)
                     if os.path.isdir(new_path):
                         game.sync_path = new_path
-                        yield game.to_dict()
+                        g.append(game.to_dict())
                     else:
                         print("Couldn't find " + game.name + " at " + new_path)
+        return g
     else:
         for game in save_database:
             new_sync = game.sync_path.replace("XXXXX", str(user_id))
             if os.path.isdir(new_sync):
                 print("Found game at:" + new_sync)
-                yield game.to_dict()
+                g.append(game.to_dict())
             else:
                 print ("Couldn't find " + game.name + " at " + new_sync)
+        return g
