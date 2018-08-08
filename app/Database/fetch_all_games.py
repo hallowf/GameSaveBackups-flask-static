@@ -19,11 +19,12 @@ class Game():
         self.name = game_name
         self.path = game_path
         self.sync_path = sync_path
+        self.found = False
     def to_dict(self):
         self.name
         self.path
         self.sync_path
-        return {"name": self.name, "path": self.path, "sync_path": self.sync_path}
+        return {"name": self.name, "path": self.path, "sync_path": self.sync_path, "found": self.found}
 
 
 ### The game database to load
@@ -74,27 +75,32 @@ def convert_path(user_id):
     user_id = convert_id(user_id)
     g = []
     if current_os == "Windows":
+        drive_letters = win32api.GetLogicalDriveStrings().split("\000")[:-1]
         for game in save_database:
             new_sync = game.sync_path.replace("XXXXX", str(user_id))
-            drive_letters = win32api.GetLogicalDriveStrings().split("\000")[:-1]
             for drive in drive_letters:
-                if os.path.isdir(new_sync):
+                if os.path.isdir(new_sync) and game.found == False:
                     game.sync_path = new_sync
+                    print("Found " + game.name + " at " + game.sync_path)
+                    game.found = True
                     g.append(game.to_dict())
                 else:
                     new_path = new_sync.replace("C:\\", drive)
-                    if os.path.isdir(new_path):
+                    if os.path.isdir(new_path) and game.found == False:
+                        print("Found " + game.name + " at " + new_path)
+                        game.found = True
                         game.sync_path = new_path
                         g.append(game.to_dict())
-                    else:
+                    elif os.path.isdir(new_path) == False and game.found == False:
                         print("Couldn't find " + game.name + " at " + new_path)
         return g
     else:
         for game in save_database:
             new_sync = game.sync_path.replace("XXXXX", str(user_id))
-            if os.path.isdir(new_sync):
+            if os.path.isdir(new_sync) and game.found == False:
                 print("Found game at:" + new_sync)
+                game.found = True
                 g.append(game.to_dict())
-            else:
+            elif os.path.isdir(new_sync) == False and game.found == False:
                 print ("Couldn't find " + game.name + " at " + new_sync)
         return g
