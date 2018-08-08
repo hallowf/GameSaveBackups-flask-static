@@ -1,5 +1,7 @@
-from app import app
-from app import socketio
+import eventlet
+eventlet.monkey_patch()
+from app import app, socketio
+from app.Database.fetch_all_games import generate_games, convert_path
 
 ### App parameters
 app.config['SECRET_KEY'] = 'secret!'
