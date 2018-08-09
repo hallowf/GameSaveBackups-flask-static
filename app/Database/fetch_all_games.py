@@ -1,7 +1,7 @@
 import os
 import json
 import platform
-from app.utilities.id_converter import convert_id
+#from app.utilities.id_converter import convert_id
 
 ### Check OS
 current_os = platform.system()
@@ -28,9 +28,9 @@ class Game():
 
 
 ### The game database to load
-save_database = json.load(open("app/Database/database.json"))
+#save_database = json.load(open("app/Database/database.json"))
 
-#save_database = json.load(open("database.json"))
+save_database = json.load(open("Database/database.json"))
 
 
 ### Function to return game objects
