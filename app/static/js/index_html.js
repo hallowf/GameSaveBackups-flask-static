@@ -1,7 +1,7 @@
 // Template for creating game cards
 const cardTemplate = _.template(`
   <div class="card bg-secondary game_cards" style="width:85%; background-color:#eae8ea; margin:1em auto">
-    <img class="card-img-top" src="/img/gameimgs/<%=name%>.jpg" alt="Card image cap">
+    <img class="card-img-top" src="static/images/gameimgs/<%=name%>.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%=name%></h5>
       <p class="card-text"><%=path%></p>
@@ -20,14 +20,12 @@ const cardTemplate = _.template(`
 const socket = io.connect("http://" + document.domain + ":" + location.port + "/websocket")
 
 
-function renderGames(games) {
+function renderGame(game) {
   const the_row = document.getElementById("the_row")
-  the_row.innerHTML = ""
-  games.forEach(game => {
-    var element = $('<div></div>').addClass('col-sm-3')
-    element.html(cardTemplate({ "name": JSON.stringify(game.name), "path": JSON.stringify(game.path), "sync_path": JSON.stringify(game.sync_path)}))
-    the_row.append(element)
-  })
+  var element = document.createElement("div")
+  element.classList.add("col-sm-3")
+  element.innerHTML = cardTemplate(game)
+  the_row.appendChild(element)
 }
 
 
@@ -40,10 +38,10 @@ function searchUnsynced() {
   })
   socket.on("unsynced_game_list", function(msg) {
     const gameList = msg.dict
+    document.getElementById("the_row").innerHTML = ""
     gameList.forEach(function(object){
-      console.log("Received: " + JSON.stringify(object))
+      renderGame(object)
     })
-    renderGames(msg.dict)
   })
 }
 
@@ -55,10 +53,10 @@ function searchSynced() {
   })
   socket.on("synced_game_list", function(msg) {
     const syncedGameList = msg.dict
+    document.getElementById("the_row").innerHTML = ""
     syncedGameList.forEach(function(object) {
-      console.log("Received: " + JSON.stringify(object))
+      renderGame(object)
     })
-    renderGames(msg.dict)
   })
 }
 
