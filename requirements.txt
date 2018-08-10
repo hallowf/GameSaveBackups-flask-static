@@ -1,3 +1,4 @@
 flask
 steam
 flask_socketio
+eventlet

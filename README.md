@@ -1,5 +1,5 @@
 # GameSaveBackups
-Creates backups for game saves
+Creates backups for game saves Work in progress
 
 
 # How to build from source
@@ -9,19 +9,14 @@ Creates backups for game saves
 You will need the following packages:
 
   1. steam
-  2. pyinstaller
-  3. eel
+  2. flask
+  3. flask-socketio
   4. win32api
+  5. eventlet
 
 
 ### Building
 
-First go to https://github.com/hallowf/GameSaveBackups and download the repository,
-navigate to the directory and run the following code:
-
-`pyinstaller -m eel user_interface.spec web`
-
-And you should have a folder named dist containing the program.
 
 
 
@@ -36,7 +31,7 @@ And you should have a folder named dist containing the program.
 
 # Sources
 
-### All trademarks and registered trademarks are the property of their respective owners.
+### Disclaimer: All trademarks and registered trademarks are the property of their respective owners.
 
 
 
@@ -55,11 +50,11 @@ https://github.com/ValvePython/steam
 
 https://www.pyinstaller.org/license.html
 
-#### Eel - Electron-like offline HTML/JS GUI apps
+#### Eventlet
 
-https://github.com/ChrisKnott/Eel
+https://github.com/eventlet/eventlet/blob/master/LICENSE
 
-##### Game Images
+### Game Images
 
 The game screenshots included where all taken by me during gameplay, so all rights
 belong to the respective companies who produced the content I own none of the graphical
