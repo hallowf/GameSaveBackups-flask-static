@@ -3,7 +3,7 @@ from Database.fetch_all_games import generate_games
 
 tmp_path = "tmp_saves"
 
-## Function to copy save files to tmp folder requires a dict as parameter "games"
+## Function to copy save files to tmp folder requires a list with dicts as parameter "games"
 def copy_saves_toTmp(games):
     for game in games:
         if os.path.isdir(tmp_path + "/" + game["name"]):
@@ -42,7 +42,17 @@ def read_zip_file(filepath):
             str_tuple = (str_find,)
     zip_file.close()
 
+def delete_from_list(games):
+    i = 0
+    for game in games:
+        if game["name"] == "Space Engineers":
+            del games[i]
+            print("lel")
+        i = i + 1
+    print(games)
 
-#copy_saves_toTmp(pickle.load(open("games_array.pckl", "rb")))
+#copy_saves_toTmp(generate_games())
+#copy_saves_toTmp(pickle.load(open("games.pckl", "rb")))
 #make_zip_file()
-read_zip_file("ZippedBackups.zip")
+#read_zip_file()
+#delete_from_list(pickle.load(open("games.pckl", "rb")))
