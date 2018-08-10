@@ -31,15 +31,11 @@ def make_zip_file():
 
 
 def read_zip_file(filepath):
-    slash = "/"
     zip_file = zipfile.ZipFile(filepath)
     path_list = zip_file.namelist()
-    for x in path_list:
-        print(x)
-        x_str = str(x)
-        if x_str.endswith(slash):
-            str_find = x_str.split("/")[0]
-            str_tuple = (str_find,)
+    for path in path_list:
+        if path.endswith("/") and path != "./":
+            print(path)
     zip_file.close()
 
 def delete_from_list(games):
@@ -54,5 +50,5 @@ def delete_from_list(games):
 #copy_saves_toTmp(generate_games())
 #copy_saves_toTmp(pickle.load(open("games.pckl", "rb")))
 #make_zip_file()
-#read_zip_file()
+read_zip_file("ZippedBackups.zip")
 #delete_from_list(pickle.load(open("games.pckl", "rb")))
