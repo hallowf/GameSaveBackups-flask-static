@@ -3,6 +3,7 @@ from Database.fetch_all_games import generate_games
 
 tmp_path = "tmp_saves"
 
+
 ## Function to copy save files to tmp folder requires a list with dicts as parameter "games"
 def copy_saves_toTmp(games):
     for game in games:
@@ -30,18 +31,26 @@ def make_zip_file():
         shutil.rmtree(tmp_path)
 
 
-def read_zip_file(filepath):
-    zip_file = zipfile.ZipFile(filepath)
-    path_list = zip_file.namelist()
-    for path in path_list:
-        if path.endswith("/") and path != "./":
-            print(path)
-    zip_file.close()
+def read_zip_file(zipped="ZippedBackups.zip"):
+    games = []
+    zip_file = zipfile.ZipFile(zipped, "r")
+    for dir in zip_file.namelist():
+        if dir.endswith("/") == True and dir.count("/") == 1:
+            games.append(dir.replace("/", ""))
+    return games
 
-def delete_from_list(games):
+
+def check_if_zipped(games, zipped="ZippedBackups.zip"):
+    zip_file = zipfile.ZipFile(zipped, "r")
+    for game in games:
+        if game in zip_file.namelist():
+            print(game)
+
+
+def delete_from_list(games, name):
     i = 0
     for game in games:
-        if game["name"] == "Space Engineers":
+        if game["name"] == name and name != None:
             del games[i]
             print("lel")
         i = i + 1
@@ -50,5 +59,6 @@ def delete_from_list(games):
 #copy_saves_toTmp(generate_games())
 #copy_saves_toTmp(pickle.load(open("games.pckl", "rb")))
 #make_zip_file()
-read_zip_file("ZippedBackups.zip")
+check_if_zipped(pickle.load(open("games.pckl", "rb")), "ZippedBackups.zip")
+#print(read_zip_file("ZippedBackups.zip"))
 #delete_from_list(pickle.load(open("games.pckl", "rb")))
