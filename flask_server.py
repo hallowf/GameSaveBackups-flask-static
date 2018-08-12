@@ -2,10 +2,12 @@ import eventlet
 eventlet.monkey_patch()
 from app import app, socketio
 from app.Database.fetch_all_games import generate_games, convert_path
+from flask_cors import CORS
 
 ### App parameters
 app.config['SECRET_KEY'] = 'secret!'
 
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 # Run app
