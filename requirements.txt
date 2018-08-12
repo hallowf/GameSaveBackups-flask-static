@@ -2,3 +2,4 @@ flask
 steam
 flask_socketio
 eventlet
+flask-cors
