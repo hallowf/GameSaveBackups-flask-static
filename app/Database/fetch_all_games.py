@@ -57,7 +57,7 @@ save_database = list(map(load_game, save_database))
 
 ## Simple function that returns all games
 ## Wont work for steam sync
-def generate_games():
+def get_unsynced_games():
     g = []
     for game in save_database:
         if os.path.isdir(game.path) and game.found == False:
@@ -71,7 +71,7 @@ def generate_games():
 
 ### Check the OS and searches for the games in steam library's across all hard drives
 ## TODO: At the moment it can only search all drives in windows, add linux functionality
-def convert_path(user_id):
+def get_synced_games(user_id):
     user_id = convert_id(user_id)
     g = []
     if current_os == "Windows":

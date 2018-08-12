@@ -1,6 +1,6 @@
 from flask_socketio import SocketIO, emit
 from app import socketio
-from app.Database.fetch_all_games import generate_games, convert_path
+from app.Database.fetch_all_games import get_synced_games, get_unsynced_games
 
 #### # FIXME: This should be in socket_events but if imported that way monkey patch produces a # BUG: https://github.com/gevent/gevent/issues/1016
 ### Socket events
@@ -12,10 +12,10 @@ def test_message(message):
 def send_data(message):
     print(message["request"][:13])
     if message["request"] == "search_unsynced":
-        emit("unsynced_game_list", {"dict": generate_games()})
+        emit("unsynced_game_list", {"dict": get_unsynced_games()})
     elif message["request"][:13] == "search_synced":
         user_id = message["request"].replace("search_synced ", "")
-        emit("synced_game_list", {"dict": convert_path(user_id)})
+        emit("synced_game_list", {"dict": get_synced_games(user_id)})
 
 @socketio.on("broadcast event", namespace="/websocket")
 def test_message(message):
