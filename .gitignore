@@ -6,6 +6,7 @@ __pycache__
 .pytest_cache
 *.zip
 env
+venv
 
 
 ### Custom ignores
@@ -16,6 +17,7 @@ The Witcher
 tmp_saves
 *.pckl
 
+## React
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
