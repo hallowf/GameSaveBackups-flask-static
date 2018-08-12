@@ -6,12 +6,10 @@ class Games extends React.Component {
     fetch('http://localhost:2890/api/games?user_id=' + this.props.userId)
       .then(res => res.json()
         .then(games => {
-          debugger
           this.setState({games})
         })
       )
       .catch(e => {
-        debugger
         this.setState({error: e})
       })
   }
