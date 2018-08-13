@@ -12,4 +12,4 @@ deploy:
   app: flask-static-2890
   on:
     repo: hallowf/GameSaveBackups
-    branch: flask-static
+    branch: master
